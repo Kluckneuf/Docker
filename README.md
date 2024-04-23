@@ -1,3 +1,4 @@
+# PARTIE 1
 J'ai tout d'avord installer Nodejs , NPM et docker sur ma machine en suivant des exemples sur internet
 Puis j'ai créer mon Dockerfile par qui est ci-dessus  dans le git.
 J'ai ensuite build mon image docker comme-ci:
