@@ -1,3 +1,4 @@
+**(Pour information si vous voyez si ce message c'est que j'ai toujours pas réussi a faire fonctionner ma machine virtuelle et que je peux donc faire aucun screenshot)**
 # PARTIE 1
 > J'ai tout d'avord installer Nodejs , NPM et docker sur ma machine en suivant des exemples sur internet
 J'ai donc fait les commande qui mon donné ces résultats
