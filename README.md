@@ -33,6 +33,8 @@ En effet si on change le 'PORT' par 1337 on peut retrouver notre conteneur sur :
 
 
 
+
+
 > Pour la dernière éatpe nous avons une dernière chose à rajouter dans notre commande, on doit rajouter un composant dans notre commande run:
 `docker run -p 1337:1337 -e PORT=1337 --hostname mydocker image`
 > Ici nous avons fait en sorte de modifier le hostname de notre conteneur pour qu'il soit décris en tant que mydocker.
