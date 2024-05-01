@@ -1,38 +1,39 @@
 version: '3'
 
 services:
-  web:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  wordpress:
+    image: wordpress:latest
     ports:
-      - "3000:3000"
-    volumes:
-      - .:/app
+      - "8000:80"
     environment:
-      NODE_ENV: development
-      MYSQL_HOST: mysql
-      MYSQL_PORT: 3306
-      REDIS_HOST: redis
-      REDIS_PORT: 6379
-    depends_on:
-      - mysql
-      - redis
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_CACHE', true);
+        define('WP_CACHE_KEY_SALT', 'your_cache_salt_here');
+    volumes:
+      - wordpress_data:/var/www/html
+    deploy:
+      replicas: 2
 
-  mysql:
+  db:
     image: mysql:5.7
-    ports:
-      - "3306:3306"
     volumes:
-      - mysql_data:/var/lib/mysql
+      - db_data:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: ugo
-      MYSQL_DATABASE: ugo
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
 
-  redis:
-    image: redis:latest
+  memcached:
+    image: memcached:latest
     ports:
-      - "6379:6379"
+      - "11211:11211"
 
 volumes:
-  mysql_data:
+  wordpress_data:
+  db_data:
+
