@@ -43,6 +43,14 @@ Ici nous avons fait en sorte de modifier le hostname de notre conteneur pour qu'
 > 4. Pour lancer tous les services, vous pouvez exécuter la commande suivante à la racine de votre projet :
 `docker-compose up`
 > Cela va construire les images, démarrer les conteneurs et les connecter entre eux selon la configuration définie dans le fichier docker-compose.yml. Vous pourrez ensuite accéder à votre CMS WordPress depuis votre navigateur en allant sur http://localhost:8000.
+> Et pour, Redis sera disponible à l'adresse redis://localhost:6379 pour être utilisé comme base de données de cache par WordPress.
+
+
+
+
+
+
+
 
 
 
